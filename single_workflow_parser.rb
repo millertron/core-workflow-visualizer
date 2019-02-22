@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'gviz'
+require 'fileutils'
 require './workflow_status'
 
 if ARGV.length < 1
@@ -69,4 +70,8 @@ Graph do
 	#generate output to specified or default path
 	save(ARGV[1] || :output, :png)
 end
+
+#Move generated files to output directory
+FileUtils.mkdir 'output' unless Dir.exists? 'output'
+FileUtils.mv (Dir.glob("*.dot") + Dir.glob("*.png")), 'output'
 
