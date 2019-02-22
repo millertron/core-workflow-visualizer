@@ -34,3 +34,11 @@ build/
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
+
+#ignore output from the application
+*.png
+*.dot
+
+#ignore files created in input and output folders
+input/*
+output/*
