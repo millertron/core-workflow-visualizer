@@ -42,3 +42,5 @@ build/
 #ignore files created in input and output folders
 input/*
 output/*
+
+*.swp
